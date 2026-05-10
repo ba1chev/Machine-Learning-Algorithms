@@ -1,8 +1,8 @@
-#include <iostream>
-#include <fstream>
 #include <vector>
 #include <string>
 #include <random>
+#include <fstream>
+#include <iostream>
 
 float generateRandomPoint(int64_t leftBound = 0, int64_t rightBound = 1) {
     if (rightBound <= leftBound) {
