@@ -16,6 +16,9 @@ public:
     Matrix& operator += (const Matrix& other);
     Matrix& operator -= (const Matrix& other);
 
+    Vector<T>& operator [] (size_t index);
+    const Vector<T>& operator [] (size_t index) const;
+
     void pop_back();
     void push_back(Vector<T>&& row);
     void push_back(const Vector<T>& row);
@@ -181,4 +184,22 @@ size_t Matrix<T>::getCountOfCols() const {
 template <class T>
 const Vector<Vector<T>>& Matrix<T>::getData() const {
     return this->data;
+}
+
+template <class T>
+Vector<T>& Matrix<T>::operator [] (size_t index) {
+    if (index >= this->countOfRows) {
+        throw std::out_of_range("Index is out of range");
+    }
+
+    return this->data[index];
+}
+
+template <class T>
+const Vector<T>& Matrix<T>::operator [] (size_t index) const {
+if (index >= this->countOfRows) {
+        throw std::out_of_range("Index is out of range");
+    }
+
+    return this->data[index];
 }
