@@ -202,3 +202,64 @@ std::istream& operator >> (std::istream& is, Vector<T>& vector) {
     vector = newVector;
     return is;
 }
+
+template <class T>
+void Vector<T>::free() {
+    delete[] this->data;
+    this->data = nullptr
+    this->size = 0;
+    this->capacity = 0;
+}
+
+template <class T>
+void Vector<T>::resize(size_t newCapacity) {
+    if (newCapacity <= this->capacity) {
+        throw std::runtime_error("New capacity must be greater than the old one");
+    }
+
+    this->capacity = newCapacity;
+    T* newData = new T[this->capacity] {};
+
+    for (size_t i = 0; i < this->size; i++) {
+        newData[i] = this->data[i];
+    }
+    
+    delete[] data;
+    data = newData;
+}
+
+
+template <class T>
+void Vector<T>::copyFrom(const Vector& other) {
+    this->capacity = other.getCapaciy();
+    T* newData = new T[this->capacity] {};
+
+    for (size_t i = 0; i < this->size; i++) {
+        newData[i] = other.data[i];
+    }
+    
+    delete[] data;
+    data = newData;
+}
+
+template <class T>
+void Vector<T>::moveTo(Vector&& other) noexcept {
+    this->data = other.data;
+    this->capacity = other.capacity;
+    this->size = other.size;
+
+    other.data = nullptr;
+    other.capacity = 0;
+    other.size = 0;
+}
+
+template <class T>
+size_t Vector<T>::calculateNeededCapacity(size_t size) const {
+    size_t newCapacity = 1 << 0;
+
+    while (newCapacity <= size) {
+        newCapacity <<= 1;
+    }
+
+    return newCapacity;
+}
