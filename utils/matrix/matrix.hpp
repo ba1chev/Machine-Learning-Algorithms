@@ -26,7 +26,8 @@ public:
 
     size_t getCountOfRows() const;
     size_t getCountOfCols() const;
-    const Vector<Vector<T>>& getData() const;
+    const Vector<Vector<T>>& getDataNonRef() const;
+    Vector<Vector<T>>& getDataByRef();
 };
 
 template <class T>
@@ -182,7 +183,12 @@ size_t Matrix<T>::getCountOfCols() const {
 }
 
 template <class T>
-const Vector<Vector<T>>& Matrix<T>::getData() const {
+const Vector<Vector<T>>& Matrix<T>::getDataNonRef() const {
+    return this->data;
+}
+
+template <class T>
+Vector<Vector<T>>& Matrix<T>::getDataByRef() {
     return this->data;
 }
 

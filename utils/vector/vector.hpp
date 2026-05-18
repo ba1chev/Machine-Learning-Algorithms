@@ -34,7 +34,8 @@ public:
 
     size_t getSize() const;
     size_t getCapaciy() const;
-    const T* getData() const;
+    const T* getDataNonRef() const;
+    T* getDataByRef();
 
     template <class U>
     friend std::ostream& operator << (std::ostream& os, const Vector<U>& vector);
@@ -149,7 +150,12 @@ size_t Vector<T>::getCapaciy() const {
 }
 
 template <class T>
-const T* Vector<T>::getData() const {
+const T* Vector<T>::getDataNonRef() const {
+    return this->data;
+}
+
+template <class T>
+T* Vector<T>::getDataByRef() {
     return this->data;
 }
 
