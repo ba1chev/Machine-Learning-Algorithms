@@ -20,6 +20,10 @@ public:
     void push_back(Vector<T>&& row);
     void push_back(const Vector<T>& row);
     Matrix transpose() const;
+
+    size_t getCountOfRows() const;
+    size_t getCountOfCols() const;
+    const Vector<Vector<T>>& getData() const;
 };
 
 template <class T>
@@ -162,4 +166,19 @@ Matrix<T> Matrix<T>::transpose() const {
     }
 
     return result;
+}
+
+template <class T>
+size_t Matrix<T>::getCountOfRows() const {
+    return this->countOfRows;
+}
+
+template <class T>
+size_t Matrix<T>::getCountOfCols() const {
+    return this->countOfCols;
+}
+
+template <class T>
+const Vector<Vector<T>>& Matrix<T>::getData() const {
+    return this->data;
 }
