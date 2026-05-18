@@ -197,7 +197,7 @@ Vector<T>& Matrix<T>::operator [] (size_t index) {
 
 template <class T>
 const Vector<T>& Matrix<T>::operator [] (size_t index) const {
-if (index >= this->countOfRows) {
+    if (index >= this->countOfRows) {
         throw std::out_of_range("Index is out of range");
     }
 

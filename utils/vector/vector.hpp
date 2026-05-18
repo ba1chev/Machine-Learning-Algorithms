@@ -206,7 +206,7 @@ std::istream& operator >> (std::istream& is, Vector<T>& vector) {
 template <class T>
 void Vector<T>::free() {
     delete[] this->data;
-    this->data = nullptr
+    this->data = nullptr;
     this->size = 0;
     this->capacity = 0;
 }
@@ -231,13 +231,14 @@ void Vector<T>::resize(size_t newCapacity) {
 
 template <class T>
 void Vector<T>::copyFrom(const Vector& other) {
+    this->size = other.size;
     this->capacity = other.getCapaciy();
     T* newData = new T[this->capacity] {};
 
     for (size_t i = 0; i < this->size; i++) {
         newData[i] = other.data[i];
     }
-    
+
     delete[] data;
     data = newData;
 }

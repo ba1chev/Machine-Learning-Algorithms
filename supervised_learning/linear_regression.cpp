@@ -32,9 +32,9 @@ Pair<Matrix<float>, float> gradient_descent(const Matrix<float>& Y, const Matrix
 }
 
 void linear_regression_simulation(size_t numberOfIterations, const Matrix<float>& Y, const Matrix<float>& X,
-    Matrix<float>& W, float b, const float learningRate = 0.00001) {
+    Matrix<float>& W, float& b, const float learningRate = 0.00001) {
     for (size_t i = 0; i < numberOfIterations; i++) {
-        Pair<Matrix<float>, float> currentInterationResult = gradient_descent(Y, X, W, b);
+        Pair<Matrix<float>, float> currentInterationResult = gradient_descent(Y, X, W, b, learningRate);
         W = currentInterationResult.getFirst();
         b = currentInterationResult.getSecond();
     }

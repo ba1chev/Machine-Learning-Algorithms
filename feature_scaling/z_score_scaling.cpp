@@ -1,3 +1,4 @@
+#include <cmath>
 #include "../utils/pair/pair.hpp"
 #include "../utils/matrix/matrix.hpp"
 #include "../utils/vector/vector.hpp"
