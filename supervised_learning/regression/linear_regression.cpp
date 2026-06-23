@@ -76,7 +76,7 @@ float loss_function(const std::vector<float>& params) {
 }
 
 int main() {
-    std::vector<float> start = {0, 0, 0, 0};
+    std::vector<float> start = { 0, 0, 0, 0 };
     auto result = gradient_descent(loss_function, start, 5000, 0.01);
     linear_regression_params = result;
 
