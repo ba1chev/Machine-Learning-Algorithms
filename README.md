@@ -10,6 +10,7 @@ A collection of classic machine learning algorithms implemented from scratch in 
 - `loss_functions/` — mean squared error, mean absolute error, Huber loss, binary cross entropy, categorical cross entropy (each with base, L1, and L2 regularized variants)
 - `encoding/` — label, one-hot, ordinal, frequency encoding
 - `scaling/` — min-max, standard (Z-score), robust, max-abs scalers
+- `dimensionality_reduction/` — PCA, LDA, truncated SVD, random projection
 
 ## Style
 
