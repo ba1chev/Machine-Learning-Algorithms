@@ -5,7 +5,7 @@ A collection of classic machine learning algorithms implemented from scratch in 
 ## Structure
 
 - `supervised_learning/regression/` — linear regression, polynomial regression, RANSAC
-- `supervised_learning/classification/` — logistic regression, decision tree, random forest, SVM, KNN
+- `supervised_learning/classification/` — logistic regression, decision tree, random forest, SVM, KNN, Naive Bayes, gradient boosting
 - `unsupervised_learning/clustering/` — k-means, DBSCAN, hierarchical clustering
 - `loss_functions/` — mean squared error, mean absolute error, Huber loss, binary cross entropy, categorical cross entropy (each with base, L1, and L2 regularized variants)
 - `encoding/` — label, one-hot, ordinal, frequency encoding
